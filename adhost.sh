@@ -6,47 +6,49 @@ file="${1:-/dev/stdin}"
 # 临时存储结果（用于去重）
 declare -A results
 
-# 1. 逐行读取逻辑（参考你提供的稳健写法）
+# 1. 逐行读取逻辑（采用你提供的稳健写法）
 while IFS= read -r line || [ -n "$line" ]; do
     # 去掉首尾空白
     l="${line#"${line%%[![:space:]]*}"}"
     l="${l%"${l##*[![:space:]]}"}"
 
-    # 跳过空行或以 # 开头的注释行
+    # --- 跳过逻辑 ---
+    # 跳过空行或以 # 开头的行
     [[ -z "$l" || "${l:0:1}" == "#" ]] && continue
 
-    # 拆分第一个词（通常是 IP）和 剩余部分（通常是域名）
-    # 比如 "0.0.0.0 ads1.com ads2.com"
+    # 跳过特定的开头部分（根据你的要求：包含 localhost, hostname, ip6 的行不做处理）
+    [[ "$l" == *"localhost"* || "$l" == *"hostname"* || "$l" == *"ip6"* ]] && continue
+    # ---------------
+
+    # 拆分行（处理类似 0.0.0.0 domain.com 或 1.2.3.4 domain.com）
     first_word="${l%%[[:space:]]*}"
     rest_of_line="${l#*[[:space:]]}"
 
-    # 处理逻辑：
-    # 我们需要把 line 里的所有元素拆开看，哪个是 IP，哪个是域名
-    # 为了方便，我们将 first_word 和 rest_of_line 放在一起处理
+    # 将行内的所有词拆开处理
     for item in $first_word $rest_of_line; do
-        # 过滤掉回环地址，不把它们当做拦截目标
-        [[ "$item" == "0.0.0.0" || "$item" == "127.0.0.1" || "$item" == "::1" ]] && continue
+        # 只要是 0.0.0.0 就跳过（不作为拦截目标，只看它后面的域名）
+        [[ "$item" == "0.0.0.0" ]] && continue
         
         # 判断类型
         if [[ "$item" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            # IPv4
+            # IPv4：直接转为 /32（不额外过滤 127.*，尊重原始数据）
             results["- IP-CIDR,$item/32"]=1
         elif [[ "$item" == *:* ]]; then
-            # IPv6
+            # IPv6：直接转为 /128
             results["- IP-CIDR,$item/128"]=1
         elif [[ "$item" == *"."* ]]; then
-            # 包含点且不是 IP 的视为域名
+            # 域名：包含点号即视为域名（包括你提到的 http:// 那一行也会按原样处理）
             results["- DOMAIN,$item"]=1
         fi
     done
 done < "$file"
 
-# 2. 输出 YAML 格式
+# 2. 输出转换后的 YAML
 echo "#10007"
 echo "#更新时间: $(TZ='Asia/Shanghai' date "+%Y-%m-%d %H:%M:%S")"
 echo "payload:"
 
-# 排序输出，保证结果稳定且方便对比
+# 排序输出，保证结果稳定
 IFS=$'\n' sorted_list=($(printf "%s\n" "${!results[@]}" | sort))
 unset IFS
 
