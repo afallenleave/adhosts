@@ -54,8 +54,8 @@ jobs:
       - name: Publish updated config.yaml to Gist
         uses: exuanbo/actions-deploy-gist@v1      # v1.1.4 同步到最新
         with:
-          gist_id:"f0d8e7d1f9b2d10f14e057c31603997c"       # 你的 Gist ID
-          token:"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"     # 需有 gist 权限
+          gist_id: "f0d8e7d1f9b2d10f14e057c31603997c"       # 你的 Gist ID
+          token: "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"     # 需有 gist 权限
           gist_description: "Clash 配置（定时更新 hosts）"     # 可选，更新 Gist 的描述
           gist_file_name:   "config.yaml"                    # 可选，Gist 中文件名
           file_path:        "config.yaml"                    # 必填，仓库中要同步的文件路径
