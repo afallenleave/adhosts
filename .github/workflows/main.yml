@@ -2,7 +2,7 @@ name: Auto Update Rules
 
 on:
   schedule:
-    - cron: '0 */5 * * *'
+    - cron: '0 */12 * * *'
   workflow_dispatch:
 
 permissions:
