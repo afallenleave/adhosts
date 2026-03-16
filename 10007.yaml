@@ -1,5 +1,5 @@
 #10007
-#更新时间: 2026-03-16 10:42:37
+#更新时间: 2026-03-16 21:20:11
 payload:
 - DOMAIN,0.r.msn.com
 - DOMAIN,0127.adsame.com
@@ -2932,7 +2932,6 @@ payload:
 - DOMAIN,ads.poconorecord.com
 - DOMAIN,ads.pof.com
 - DOMAIN,ads.pointroll.com
-- DOMAIN,ads.policy-management-security.cfd
 - DOMAIN,ads.popfolkstars.com
 - DOMAIN,ads.pornharlot.net
 - DOMAIN,ads.postandparcel.info
@@ -8773,7 +8772,6 @@ payload:
 - DOMAIN,eduardogomes.adv.br
 - DOMAIN,eduardorodrigues.adv.br
 - DOMAIN,education.leads360.com
-- DOMAIN,educationadvicegn.com
 - DOMAIN,eedclicks.ero-advertising.com
 - DOMAIN,eeghadse.com
 - DOMAIN,efcad85fded269f462c434c4c5f84654a17d4a77.cws.conviva.com
@@ -8969,7 +8967,6 @@ payload:
 - DOMAIN,fasts-downloads.com
 - DOMAIN,fata.ero-advertising.com
 - DOMAIN,fav.simba.taobao.com
-- DOMAIN,fbaddadsbook.com
 - DOMAIN,fbofferads.com
 - DOMAIN,fc.adswt.com
 - DOMAIN,fcanr.tracking.miui.com
@@ -9118,6 +9115,7 @@ payload:
 - DOMAIN,fr.rtb-rubicon-1.ads-userverlua-aws-va-106.gbc.criteo.com
 - DOMAIN,fra1-ib.adnxs-simple.com
 - DOMAIN,francecadstre.fr
+- DOMAIN,frank-advantage-131766.framer.app
 - DOMAIN,freakads.com
 - DOMAIN,free-ebookdownloads.com
 - DOMAIN,free247downloads.com
@@ -10737,7 +10735,6 @@ payload:
 - DOMAIN,mathads.com
 - DOMAIN,mathilde-ads.com
 - DOMAIN,maticooads.com
-- DOMAIN,matildesadvocacia.com
 - DOMAIN,matwbp.iask.sina.com.cn
 - DOMAIN,maven.ad4game.com
 - DOMAIN,max-adserv.com
@@ -12033,6 +12030,7 @@ payload:
 - DOMAIN,pl.relevance.enzymeadvisinggroup.com
 - DOMAIN,pl.update-myinformations.info
 - DOMAIN,pl.update-tracks.com
+- DOMAIN,pla.advanced-blutickfanpages.sbs
 - DOMAIN,planeadvancing.com
 - DOMAIN,planning-analytics.ibmcloud.com
 - DOMAIN,platform-api.sharethis.com
@@ -12301,7 +12299,6 @@ payload:
 - DOMAIN,qsptv.net
 - DOMAIN,qsskp.legalinjuryadvocates.com
 - DOMAIN,qstore.inner.api.sj.360.cn
-- DOMAIN,quadvskinny.space
 - DOMAIN,quanjing.cnzz.com
 - DOMAIN,quantumads.com
 - DOMAIN,quartermedia-ad-service.net
@@ -15381,7 +15378,6 @@ payload:
 - DOMAIN,wan.2345.com
 - DOMAIN,wan.youku.com
 - DOMAIN,wangmeng.baidu.com
-- DOMAIN,wap.fbaddadsbook.com
 - DOMAIN,wap.hot-mob.com
 - DOMAIN,wap.mpush.qq.com
 - DOMAIN,wapwbclick.mobile.sina.cn
@@ -16357,6 +16353,7 @@ payload:
 - DOMAIN,www.pin.live-click.shop
 - DOMAIN,www.piwik.ero-advertising.com
 - DOMAIN,www.pl-oferta6583198-google-pixel-10-pro-xl-512.cfd
+- DOMAIN,www.pla.advanced-blutickfanpages.sbs
 - DOMAIN,www.pladvertising-manage.com
 - DOMAIN,www.plconnectpost.dns.army
 - DOMAIN,www.poad1811.serv00.net
